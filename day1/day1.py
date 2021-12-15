@@ -8,8 +8,8 @@ readings = [int(line.rstrip('\n')) for line in readings]
 def num_increases(num: Iterator[int]):
     return sum((b > a for a, b in itertools.pairwise(num)))
 
-def take_three(it):
-    return ((it[i-2:i+1])  for i in range(2, len(it)))
+def take_three(it: Iterator[int]):
+    return ((it[i-2:i+1]) for i in range(2, len(it)))
 
 def sum_three(nums: Iterator[int]):
     return (sum(i) for i in take_three(nums))
